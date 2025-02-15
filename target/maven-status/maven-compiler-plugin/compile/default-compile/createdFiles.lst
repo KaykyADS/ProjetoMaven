@@ -1,0 +1,4 @@
+persistence\ICrudDao.class
+persistence\GenericDao.class
+persistence\CarroDao.class
+model\Carro.class
