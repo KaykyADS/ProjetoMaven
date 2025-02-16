@@ -5,21 +5,23 @@
 <head>
     <meta charset="UTF-8">
     <title>Cadastro de Carros</title>
+    <link rel="icon" type="image/png" href="favicon.png">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="style.css" type="text/css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 </head>
-<body>
+<body class="bg-dark">
     <div class="container text-center mt-4">
-        <h1>Cadastro de Carros</h1>
-        <form action="carro" method="post" class="mt-4">
-            <table class="table table-borderless">
+        <h1 class="text-white">Cadastro de Carros</h1>
+        <form action="carro" method="post" class="mt-4 bg-dark">
+            <table class="table tabela-personalizada">
                 <tr>
                     <td colspan="3">
                         <input type="text" id="placa" name="placa" class="form-control" placeholder="Placa" value="<c:out value='${carro.placa}' />">
                     </td>
                     <td>
-                        <input type="submit" name="botao" value="Buscar" class="btn btn-dark">
+                        <input type="submit" name="botao" value="Buscar" class="btn btn-secondary w-100">
                     </td>
                 </tr>
                 <tr>
@@ -43,10 +45,10 @@
                     </td>
                 </tr>
                 <tr>
-                    <td><input type="submit" name="botao" value="Inserir" class="btn btn-dark w-100"></td>
-                    <td><input type="submit" name="botao" value="Atualizar" class="btn btn-dark w-100"></td>
-                    <td><input type="submit" name="botao" value="Excluir" class="btn btn-dark w-100"></td>
-                    <td><input type="submit" name="botao" value="Listar" class="btn btn-dark w-100"></td>
+                    <td><input type="submit" name="botao" value="Inserir" class="btn btn-success w-100"></td>
+                    <td><input type="submit" name="botao" value="Atualizar" class="btn btn-primary w-100"></td>
+                    <td><input type="submit" name="botao" value="Excluir" class="btn btn-danger w-100"></td>
+                    <td><input type="submit" name="botao" value="Listar" class="btn btn-warning w-100"></td>
                 </tr>
             </table>
         </form>

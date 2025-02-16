@@ -11,4 +11,4 @@ cor VARCHAR(50) NOT NULL
 )
 
 SELECT * FROM carros
-SELECT placa, marca, modelo, ano, cor FROM carros
+SELECT placa, Marca, modelo, ano, cor FROM carros

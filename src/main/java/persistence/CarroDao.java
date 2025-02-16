@@ -22,7 +22,7 @@ public class CarroDao implements ICrudDao<Carro> {
 	public void inserir(Carro c) throws SQLException, ClassNotFoundException {
 		System.out.println("Foi");
 		Connection cn = gDao.getConnection();
-		String sql = "INSERT INTO carros(placa, marca, modelo, ano, cor) VALUES (?, ?, ?, ?,?)";
+		String sql = "INSERT INTO carros(placa, marca, modelo, ano, cor) VALUES (?, ?, ?, ?, ?)";
 		PreparedStatement ps = cn.prepareStatement(sql);
 		ps.setString(1, c.getPlaca());
 		System.out.println("Inserido placa: " + c.getPlaca());
@@ -44,11 +44,11 @@ public class CarroDao implements ICrudDao<Carro> {
 		Connection cn = gDao.getConnection();
 		String sql = "UPDATE carros SET marca = ?, modelo = ?, ano = ?, cor = ? WHERE placa = ?";
 		PreparedStatement ps = cn.prepareStatement(sql);
-		ps.setString(5, c.getPlaca());
 		ps.setString(1, c.getMarca());
 		ps.setString(2, c.getModelo());
 		ps.setInt(3, c.getAno());
 		ps.setString(4, c.getCor());
+		ps.setString(5, c.getPlaca());
 		ps.executeUpdate();
 		ps.close();
 		cn.close();
@@ -82,8 +82,7 @@ public class CarroDao implements ICrudDao<Carro> {
 		}
 		rs.close();
 		ps.close();
-		cn.close();
-		
+		cn.close();		
 		return c;
 	}
 
@@ -113,6 +112,4 @@ public class CarroDao implements ICrudDao<Carro> {
 	    
 	    return carros;
 	}
-
-	
 }
